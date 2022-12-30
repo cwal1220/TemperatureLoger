@@ -19,7 +19,7 @@ function doGet(e) {
           rowData[1] = value; //Value in column B
           result = 'Written on column B';
           break;
-        case 'humidity': //Parameter
+        case 'deviceid': //Parameter
           rowData[2] = value; //Value in column C
           result += ' ,Written on column C';
           break;  
