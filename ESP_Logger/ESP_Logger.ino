@@ -2,6 +2,9 @@
 #include <ESP8266WebServer.h>
 #include <WiFiClientSecure.h>
 #include <EEPROM.h>
+#include <Wire.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
 const char* host = "script.google.com";
 String sheetID = "AKfycbxkHLiS1W8ntbogJ-6_Fz_w9jah1jTWIEOJgsdmIDe57Pcu9s8Yc479aRiH1JUGYfUX3w"; 
@@ -16,6 +19,13 @@ bool captive = true;
 
 IPAddress apIP(192, 168, 1, 1);
 ESP8266WebServer webServer(80);
+
+// Data wire is plugged into digital pin 2 on the Arduino
+#define ONE_WIRE_BUS D4
+// Setup a oneWire instance to communicate with any OneWire device
+OneWire oneWire(ONE_WIRE_BUS);  
+// Pass oneWire reference to DallasTemperature library
+DallasTemperature sensors(&oneWire);
 
 String responseHTML = ""
     "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Wi-Fi Setting Page</title></head><body><center>"
@@ -34,8 +44,8 @@ void setup()
 {
   Serial.begin(115200);
   EEPROM.begin(1024);
-  pinMode(0, INPUT_PULLUP);
-  attachInterrupt(0, initDevice, FALLING);
+  pinMode(D8, INPUT_PULLUP);
+  attachInterrupt(D8, initDevice, FALLING);
   ReadString(0, 30);
   if (!strcmp(eRead, ""))
   {
@@ -61,7 +71,7 @@ void loop()
   }
   else
   {
-    float t = 25.0;
+    float t = getTemperature();
     Serial.print("Temperature: ");
     Serial.println(t);
     Serial.println("------------");
@@ -69,7 +79,7 @@ void loop()
     sendData(t);
     // Ussing Deepsleep mode. Wire D0 pin with RST pin
     ESP.deepSleep(sendDelayUs);
-    // delay(sendDelayUs / 1000);
+//     delay(sendDelayUs / 1000);
   }
 }
 
@@ -181,4 +191,12 @@ void sendData(float temp)
     "User-Agent: BuildFailureDetectorESP8266\r\n" +
     "Connection: close\r\n\r\n");
   Serial.println("request sent");
+}
+
+float getTemperature()
+{
+  float ret;
+  sensors.requestTemperatures();
+  ret = sensors.getTempCByIndex(0);
+  return ret;
 }
