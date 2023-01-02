@@ -8,7 +8,7 @@
 
 const char* host = "script.google.com";
 String sheetID = "AKfycbxkHLiS1W8ntbogJ-6_Fz_w9jah1jTWIEOJgsdmIDe57Pcu9s8Yc479aRiH1JUGYfUX3w"; 
-const int sendDelayUs = 10 * 1000 * 1000; // 10 secons. WiFi 연결 시 5초 추가 소요됨.
+const int sendDelayUs = 15 * 60 * 1000 * 1000; // 15 minutes. WiFi 연결 시 5초 추가 소요됨.
 
 char eRead[30];
 char ssid[30];
@@ -21,7 +21,7 @@ IPAddress apIP(192, 168, 1, 1);
 ESP8266WebServer webServer(80);
 
 // Data wire is plugged into digital pin 2 on the Arduino
-#define ONE_WIRE_BUS D4
+#define ONE_WIRE_BUS D2
 // Setup a oneWire instance to communicate with any OneWire device
 OneWire oneWire(ONE_WIRE_BUS);  
 // Pass oneWire reference to DallasTemperature library
@@ -44,8 +44,8 @@ void setup()
 {
   Serial.begin(115200);
   EEPROM.begin(1024);
-  pinMode(D8, INPUT_PULLUP);
-  attachInterrupt(D8, initDevice, FALLING);
+  pinMode(0, INPUT_PULLUP);
+  attachInterrupt(0, initDevice, FALLING);
   ReadString(0, 30);
   if (!strcmp(eRead, ""))
   {
