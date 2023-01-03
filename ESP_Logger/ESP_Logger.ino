@@ -8,7 +8,7 @@
 
 const char* host = "script.google.com";
 String sheetID = "AKfycbxkHLiS1W8ntbogJ-6_Fz_w9jah1jTWIEOJgsdmIDe57Pcu9s8Yc479aRiH1JUGYfUX3w"; 
-const int sendDelayUs = 15 * 60 * 1000 * 1000; // 15 minutes. WiFi 연결 시 5초 추가 소요됨.
+const int sendDelayUs = 15 * 1 * 1000 * 1000; // 15 minutes. WiFi 연결 시 5초 추가 소요됨.
 
 char eRead[30];
 char ssid[30];
@@ -42,7 +42,7 @@ String responseHTML = ""
 
 void setup() 
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
   EEPROM.begin(1024);
   pinMode(0, INPUT_PULLUP);
   attachInterrupt(0, initDevice, FALLING);
@@ -78,8 +78,8 @@ void loop()
     // Send Temperature
     sendData(t);
     // Ussing Deepsleep mode. Wire D0 pin with RST pin
-    ESP.deepSleep(sendDelayUs);
-//     delay(sendDelayUs / 1000);
+   ESP.deepSleep(sendDelayUs);
+    //  delay(sendDelayUs / 1000);
   }
 }
 
