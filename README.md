@@ -11,3 +11,7 @@ SpreadSheet URL : https://docs.google.com/spreadsheets/d/1CrVGCopXGvlORy0PRAvVPK
 2. 툴->보드->보드매니저->contributed선택->esp8266설치(*반드시 2.7.4 버전 설치*)
 3. 툴->보드->ESP8266 boards(2.7.4)->NodeMCU 1.0 선택
 4. 툴->라이브러리 관리->DallasTemperature 검색 후 설치
+
+
+# sheet id
+AKfycbywrZNlmWRzi7_hcrFNk3I1j0weSsfOsqXoz2KBOJQeJGFRjSRrFs9_cl7zzTw4Wc6wXA
