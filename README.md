@@ -2,8 +2,8 @@
 ESP8266과 Google Spread Sheet를 이용한 온도 Logger
 
 # 테스트
-SpreadSheet URL : https://docs.google.com/spreadsheets/d/1CrVGCopXGvlORy0PRAvVPKw5m6P105xAls0RzNh8bZw/edit#gid=0
-값 업로드 테스트 : https://script.google.com/macros/s/AKfycbywrZNlmWRzi7_hcrFNk3I1j0weSsfOsqXoz2KBOJQeJGFRjSRrFs9_cl7zzTw4Wc6wXA/exec?temperature=33&deviceid=hehe1
+SpreadSheet URL : https://docs.google.com/spreadsheets/d/1DQ8Rp4Fol7UEd2eHcMi4ElAjyruYpW4afl3Gu0Xg5Uo/edit#gid=0
+값 업로드 테스트 : https://script.google.com/macros/s/AKfycbwZyoXGxg8bi_-fa-tQY0nRe1QAjyfXN75qASTZScYJqdCy3ZyOjmckZm39BzCq4r0kQA/exec?temperature=33&deviceid=hehe2
 
 
 # 아두이노 개발환경 설정방법
