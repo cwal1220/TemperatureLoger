@@ -13,5 +13,5 @@ SpreadSheet URL : https://docs.google.com/spreadsheets/d/1DQ8Rp4Fol7UEd2eHcMi4El
 4. 툴->라이브러리 관리->DallasTemperature 검색 후 설치
 
 
-# sheet id
-AKfycbywrZNlmWRzi7_hcrFNk3I1j0weSsfOsqXoz2KBOJQeJGFRjSRrFs9_cl7zzTw4Wc6wXA
+# sheet api keys
+AKfycbwZyoXGxg8bi_-fa-tQY0nRe1QAjyfXN75qASTZScYJqdCy3ZyOjmckZm39BzCq4r0kQA
