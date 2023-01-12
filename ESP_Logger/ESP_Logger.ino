@@ -7,8 +7,8 @@
 #include <DallasTemperature.h>
 
 const char* host = "script.google.com";
-String sheetID = "https://github.com/cwal1220/TemperatureLoger"; 
-const int sendDelayUs = 10 * 60 * 1000 * 1000; // 10 minutes. WiFi 연결 시 5초 추가 소요됨.
+String sheetID = "AKfycbwZyoXGxg8bi_-fa-tQY0nRe1QAjyfXN75qASTZScYJqdCy3ZyOjmckZm39BzCq4r0kQA"; 
+const int sendDelayUs = 10 * 60 * 1000 * 1000; // 15 minutes. WiFi 연결 시 5초 추가 소요됨.
 
 char eRead[30];
 char ssid[30];
